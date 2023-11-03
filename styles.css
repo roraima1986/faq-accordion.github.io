@@ -1,0 +1,151 @@
+:root {
+    --text: 'Kumbh Sans', sans-serif;
+    /* Fondo Degradado */
+    --violet: hsl(273, 75%, 66%);
+    --blue: hsl(240, 73%, 65%);
+    /* Color texto */
+    --dark-blue: hsl(238, 29%, 16%);
+    --red: hsl(14, 88%, 65%);
+    --dark-gray: hsl(237, 12%, 33%);
+    --light-gray: hsl(240, 6%, 50%);
+    /* Border */
+    --border: hsl(240, 5%, 91%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    font-family: var(--text);
+    font-size: 0.75rem;
+    background-image: linear-gradient(var(--violet), var(--blue));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.main {    
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    min-height: 95vh;    
+}
+
+
+.container { 
+    display: flex;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+.col {    
+    width: 50%;    
+}
+
+/* Columna de Preguntas */
+.faq {
+    padding: 2rem;    
+}
+
+.title {
+    color: var(--dark-blue);
+    padding-bottom: 1rem;
+}
+
+.accordion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;    
+    padding: 0.5rem;
+    border: none;
+    background-color: white;
+    color: var(--dark-gray);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.accordion:hover {
+    color: var(--red);
+}
+
+.active {
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.active .arrow {
+    transform: rotate(180deg);
+}
+
+.panel {    
+    padding: 0 0.5rem;
+    color: var(--light-gray);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.border {
+    border-top: solid 1px var(--border);
+    margin: 0.5rem 0;
+}
+
+/* Columna de imagenes */
+
+.container-img {
+    background: url(./images/illustration-woman-online-desktop.svg), url(./images/bg-pattern-desktop.svg);  
+    background-repeat: no-repeat;    
+}
+
+.img-box {
+    transform: translate(-50%, 50%);
+}
+
+.attribution {
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.attribution a {
+    color: white;
+}
+
+/* Mobile screen*/
+@media screen and (max-width:768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .col {
+        width: auto;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .accordion {
+        text-align: left;
+    }
+
+    .img-box {
+        transform: translateY(-100%);
+    }
+
+    .container-img {  
+        background: url(./images/illustration-woman-online-mobile.svg), url(./images/bg-pattern-mobile.svg);  
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(-25%);  
+    }
+}
